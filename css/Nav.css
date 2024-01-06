@@ -1,0 +1,210 @@
+@import url(
+'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fruktur:ital@0;1&family=Noto+Nastaliq+Urdu&family=Playpen+Sans&display=swap'
+);
+  
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
+  font-family: 'Playpen Sans', Sans-Serif, Arial, system;
+}
+:root {
+  --p: #fff; /* primer */
+  --s: #000; /* sekunder */
+  --g: #888; /* geser */
+  --h: #ff4500;  /* hover */
+  --n: #fff;  /* nav */
+}
+.dark {
+  --p: #000;
+  --s: #fff;
+  --n: #000;
+}
+body {
+  background: var(--p);
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 15px 40px 40px;
+  font-size: 13px;
+  box-shadow: none;
+  border-bottom: 2px solid #0000;
+  z-index: 100;
+}
+header.gsr {
+  background: var(--n);
+  padding: 13px 40px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+  border-bottom: 2px solid var(--g);
+}
+header i a {
+  color: var(--h);
+  font-size: 1.5em;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+header i a::before {
+  content: attr(title);
+  color: var(--g);
+}
+nav {
+  position: relative;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  list-style: none;
+  gap: 25px;
+}
+nav ul li a {
+  position: relative;
+  color: var(--g);
+  font-size: 1em;
+  letter-spacing: 1px;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+nav ul li a:hover,
+nav ul li a.aktif {
+  color: var(--s);
+  font-weight: 600;
+}
+nav ul li a::before {
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  border-radius: 2px;
+  bottom: -2px;
+  background: var(--h);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+}
+nav ul li a:hover::before,
+nav ul li a.aktif::before {
+  transform: scale(1);
+  transform-origin: left;
+}
+.hbg {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+.hbg i {
+  font-size: 1.3em;
+  color: var(--g);
+  cursor: pointer;
+}
+.gsr .hbg i {
+  color: var(--s);
+}
+.hbg label[for="garis"] {
+  position: relative;
+  width: 20px;
+  display: none;
+  cursor: pointer;
+}
+.hbg label[for="garis"] div {
+  width: 100%;
+  height: 2px;
+  margin: 4px;
+  background: var(--g);
+}
+.gsr .hbg label[for="garis"] div {
+  background: var(--s);
+}
+footer {
+  position: relative;
+  background-color: var(--n);
+  width: 100%;
+  text-align: center;
+  padding: 1.5em 10px;
+  border-top: 2px solid var(--g);
+}
+@media screen and (max-width: 768px) {
+  nav {
+    position: absolute;
+    backdrop-filter: blur(17px);
+    left: -100%;
+    top: 50px;
+    width: 60%;
+    height: 92vh;
+    padding: 40px;
+    border-top: 2px solid var(--g);
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.05);
+
+  }
+
+  .gsr nav {
+    background: var(--n);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .hbg label[for="garis"] {
+    display: block;
+  }
+
+  header input:checked~nav {
+    left: 0;
+  }
+
+  header input:checked~.hbg label div:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+
+  header input:checked~.hbg label div:nth-child(2) {
+    transform: rotate(-45deg) translate(2px, -2px);
+  }
+}
+
+/* loading */
+
+.lcr {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000106;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.loading {
+  position: relative;
+  border: 5px solid #222;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
