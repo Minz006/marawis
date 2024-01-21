@@ -32,7 +32,7 @@ header {
   justify-content: space-between;
   position: fixed;
   width: 100%;
-  padding: 15px 40px 40px;
+  padding: 6px 40px 40px;
   font-size: 13px;
   box-shadow: none;
   border-bottom: 2px solid #0000;
@@ -40,7 +40,7 @@ header {
 }
 header.gsr {
   background: var(--n);
-  padding: 13px 40px;
+  padding: 6px 40px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
   border-bottom: 2px solid var(--g);
 }
