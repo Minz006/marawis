@@ -1,14 +1,14 @@
-@import url(
+/*@import url(
 'https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fruktur:ital@0;1&family=Noto+Nastaliq+Urdu&family=Playpen+Sans&display=swap'
 );
-  
+*/  
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
   transition: all 0.5s ease-in-out;
-  font-family: 'Playpen Sans', Sans-Serif, Arial, system;
+  font-family:/* 'Playpen Sans' ,*/ Sans-Serif, Arial, system;
 }
 :root {
   --p: #fff; /* primer */
