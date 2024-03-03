@@ -51,6 +51,7 @@ header i a {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  font-style: none;
 }
 header i a::before {
   content: attr(title);
